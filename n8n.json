@@ -1,0 +1,306 @@
+{
+  "name": "My workflow 4",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "chat",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -240,
+        -140
+      ],
+      "id": "60ac5622-1f5d-4cd1-978f-170cffdbb370",
+      "name": "Webhook",
+      "webhookId": "98bb9b72-bd50-445e-bca8-2dec0e72fd90"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "{\n  \"\": {\n    \"message\": \"أي الخدمات تريد\",\n    \"options\": [\"خدمات العملاء\", \"الدعم الفني\", \"الاستفسارات العامة\", \"إنهاء المحادثة\"]\n  },\n  \"خدمات العملاء\": {\n    \"message\": \"اختر نوع الخدمة التي تحتاجها:\",\n    \"options\": [\"تتبع الطلب\", \"إرجاع المنتج\", \"الشكاوى\", \"العودة للقائمة الرئيسية\"]\n  },\n  \"تتبع الطلب\": {\n    \"message\": \"لتتبع طلبك، اختر أحد الخيارات التالية:\",\n    \"options\": [\"أدخل رقم الطلب\", \"آخر الطلبات\", \"حالة الشحن\", \"العودة للخلف\"]\n  },\n  \"إرجاع المنتج\": {\n    \"message\": \"ما سبب الإرجاع؟\",\n    \"options\": [\"عيب في المنتج\", \"لا يطابق الوصف\", \"تغيير الرأي\", \"العودة للخلف\"]\n  },\n  \"الشكاوى\": {\n    \"message\": \"نأسف لسماع ذلك. ما نوع الشكوى؟\",\n    \"options\": [\"جودة المنتج\", \"خدمة التوصيل\", \"خدمة العملاء\", \"العودة للخلف\"]\n  },\n  \"الدعم الفني\": {\n    \"message\": \"اختر نوع المشكلة التقنية:\",\n    \"options\": [\"مشكلة في الموقع\", \"مشكلة في التطبيق\", \"مشكلة في الدفع\", \"العودة للقائمة الرئيسية\"]\n  },\n  \"مشكلة في الموقع\": {\n    \"message\": \"ما المشكلة التي تواجهها في الموقع؟\",\n    \"options\": [\"لا يمكنني تسجيل الدخول\", \"الموقع بطيء\", \"خطأ في الصفحة\", \"العودة للخلف\"]\n  },\n  \"مشكلة في التطبيق\": {\n    \"message\": \"ما المشكلة التي تواجهها في التطبيق؟\",\n    \"options\": [\"التطبيق لا يفتح\", \"مشكلة في التحديث\", \"مشكلة في المزامنة\", \"العودة للخلف\"]\n  },\n  \"مشكلة في الدفع\": {\n    \"message\": \"ما نوع مشكلة الدفع؟\",\n    \"options\": [\"البطاقة مرفوضة\", \"خطأ في المبلغ\", \"مشكلة في التحويل\", \"العودة للخلف\"]\n  },\n  \"الاستفسارات العامة\": {\n    \"message\": \"اختر موضوع استفسارك:\",\n    \"options\": [\"ساعات العمل\", \"مواقع الفروع\", \"طرق الدفع\", \"العودة للقائمة الرئيسية\"]\n  },\n  \"ساعات العمل\": {\n    \"message\": \"ساعات العمل لدينا:\\n• الأحد - الخميس: 9 صباحاً - 10 مساءً\\n• الجمعة: 2 ظهراً - 11 مساءً\\n• السبت: 10 صباحاً - 11 مساءً\",\n    \"options\": [\"العودة للخلف\", \"العودة للقائمة الرئيسية\"]\n  },\n  \"مواقع الفروع\": {\n    \"message\": \"اختر المدينة:\",\n    \"options\": [\"الرياض\", \"جدة\", \"الدمام\", \"العودة للخلف\"]\n  },\n  \"طرق الدفع\": {\n    \"message\": \"نقبل طرق الدفع التالية:\\n• البطاقات الائتمانية (فيزا، ماستركارد)\\n• مدى\\n• التحويل البنكي\\n• الدفع عند الاستلام\",\n    \"options\": [\"العودة للخلف\", \"العودة للقائمة الرئيسية\"]\n  },\n  \"الرياض\": {\n    \"message\": \"فروعنا في الرياض:\\n• فرع العليا: شارع التحلية\\n• فرع النخيل: طريق الملك فهد\\n• فرع الربوة: شارع الأمير محمد بن عبدالعزيز\",\n    \"options\": [\"احصل على رابط الموقع\", \"العودة للخلف\", \"العودة للقائمة الرئيسية\"]\n  },\n  \"جدة\": {\n    \"message\": \"فروعنا في جدة:\\n• فرع الكورنيش: شارع الكورنيش\\n• فرع الروضة: شارع الأمير سلطان\\n• فرع البلد: السوق التاريخي\",\n    \"options\": [\"احصل على رابط الموقع\", \"العودة للخلف\", \"العودة للقائمة الرئيسية\"]\n  },\n  \"الدمام\": {\n    \"message\": \"فروعنا في الدمام:\\n• فرع الشاطئ: شارع الملك عبدالله\\n• فرع الظهران: شارع الأمير نايف\",\n    \"options\": [\"احصل على رابط الموقع\", \"العودة للخلف\", \"العودة للقائمة الرئيسية\"]\n  },\n  \"لا يمكنني تسجيل الدخول\": {\n    \"message\": \"لحل مشكلة تسجيل الدخول:\\n1. تأكد من صحة البريد الإلكتروني\\n2. أعد تعيين كلمة المرور\\n3. امسح ذاكرة التخزين المؤقت للمتصفح\",\n    \"options\": [\"أحتاج مساعدة إضافية\", \"تم حل المشكلة\", \"العودة للقائمة الرئيسية\"]\n  },\n  \"الموقع بطيء\": {\n    \"message\": \"لحل مشكلة بطء الموقع:\\n1. تحقق من سرعة الإنترنت\\n2. امسح ذاكرة التخزين المؤقت\\n3. جرب متصفح آخر\",\n    \"options\": [\"أحتاج مساعدة إضافية\", \"تم حل المشكلة\", \"العودة للقائمة الرئيسية\"]\n  },\n  \"خطأ في الصفحة\": {\n    \"message\": \"يرجى تزويدنا بالمعلومات التالية:\\n• رابط الصفحة\\n• نوع الخطأ\\n• المتصفح المستخدم\",\n    \"options\": [\"إرسال المعلومات\", \"العودة للقائمة الرئيسية\"]\n  },\n  \"عيب في المنتج\": {\n    \"message\": \"نأسف جداً لهذا. سنعالج طلب الإرجاع فوراً.\\nيرجى إرسال:\\n• رقم الطلب\\n• صور للعيب\\n• تاريخ الاستلام\",\n    \"options\": [\"إرسال المعلومات\", \"التواصل مع خدمة العملاء\", \"العودة للقائمة الرئيسية\"]\n  },\n  \"لا يطابق الوصف\": {\n    \"message\": \"نعتذر عن هذا الخطأ. يحق لك الإرجاع خلال 14 يوم.\\nيرجى تجهيز:\\n• رقم الطلب\\n• صور المنتج\",\n    \"options\": [\"بدء عملية الإرجاع\", \"التواصل مع خدمة العملاء\", \"العودة للقائمة الرئيسية\"]\n  },\n  \"تغيير الرأي\": {\n    \"message\": \"لا مشكلة! يمكنك الإرجاع خلال 14 يوم من تاريخ الاستلام.\\nالشروط:\\n• المنتج بحالته الأصلية\\n• مع جميع الملحقات\",\n    \"options\": [\"بدء عملية الإرجاع\", \"العودة للقائمة الرئيسية\"]\n  },\n  \"جودة المنتج\": {\n    \"message\": \"نأسف لعدم رضاك عن جودة المنتج.\\nسيتم تحويل شكواك لقسم الجودة للمراجعة.\\nرقم الشكوى: #QC{random}\",\n    \"options\": [\"متابعة الشكوى\", \"العودة للقائمة الرئيسية\"]\n  },\n  \"خدمة التوصيل\": {\n    \"message\": \"نعتذر عن أي إزعاج في خدمة التوصيل.\\nيرجى تزويدنا بـ:\\n• رقم الطلب\\n• تفاصيل المشكلة\",\n    \"options\": [\"إرسال المعلومات\", \"العودة للقائمة الرئيسية\"]\n  },\n  \"خدمة العملاء\": {\n    \"message\": \"نأسف لهذه التجربة.\\nسيتم مراجعة شكواك من قبل مدير الخدمة.\\nرقم الشكوى: #CS{random}\",\n    \"options\": [\"متابعة مع المدير\", \"العودة للقائمة الرئيسية\"]\n  },\n  \"احصل على رابط الموقع\": {\n    \"message\": \"سيتم إرسال رابط الموقع على رقمك المسجل عبر رسالة نصية خلال دقائق.\",\n    \"options\": [\"شكراً\", \"العودة للقائمة الرئيسية\"]\n  },\n  \"أحتاج مساعدة إضافية\": {\n    \"message\": \"سيتواصل معك أحد ممثلي خدمة العملاء خلال 24 ساعة.\\nأوقات خدمة العملاء: 9 صباحاً - 10 مساءً\",\n    \"options\": [\"حسناً\", \"العودة للقائمة الرئيسية\"]\n  },\n  \"إرسال المعلومات\": {\n    \"message\": \"يرجى إرسال المعلومات المطلوبة على:\\n📧 support@test.com\\n📱 واتساب: 0501234567\",\n    \"options\": [\"تم الإرسال\", \"العودة للقائمة الرئيسية\"]\n  },\n  \"التواصل مع خدمة العملاء\": {\n    \"message\": \"يمكنك التواصل معنا عبر:\\n📞 الهاتف: 920012345\\n📧 البريد: support@test.com\\n📱 واتساب: 0501234567\",\n    \"options\": [\"شكراً\", \"العودة للقائمة الرئيسية\"]\n  },\n  \"بدء عملية الإرجاع\": {\n    \"message\": \"تم إنشاء طلب إرجاع.\\nرقم الطلب: #RET{random}\\nسيتم التواصل معك خلال 48 ساعة\",\n    \"options\": [\"شكراً\", \"العودة للقائمة الرئيسية\"]\n  },\n  \"متابعة الشكوى\": {\n    \"message\": \"يمكنك متابعة شكواك عبر:\\n• الموقع الإلكتروني\\n• تطبيق الجوال\\n• الاتصال على 920012345\",\n    \"options\": [\"حسناً\", \"العودة للقائمة الرئيسية\"]\n  },\n  \"متابعة مع المدير\": {\n    \"message\": \"سيتواصل معك مدير خدمة العملاء خلال 24 ساعة عمل.\\nأولويتنا هي رضاك التام.\",\n    \"options\": [\"شكراً\", \"العودة للقائمة الرئيسية\"]\n  },\n  \"تم حل المشكلة\": {\n    \"message\": \"رائع! نحن سعداء بحل مشكلتك.\\nهل تحتاج أي مساعدة أخرى؟\",\n    \"options\": [\"نعم\", \"لا، شكراً\"]\n  },\n  \"تم الإرسال\": {\n    \"message\": \"شكراً لك. تم استلام معلوماتك.\\nسنراجعها ونتواصل معك قريباً.\",\n    \"options\": [\"حسناً\", \"العودة للقائمة الرئيسية\"]\n  },\n  \"إنهاء المحادثة\": {\n    \"message\": \"شكراً لتواصلك معنا. نتمنى لك يوماً سعيداً! 👋\",\n    \"options\": [\"بدء محادثة جديدة\"]\n  },\n  \"لا، شكراً\": {\n    \"message\": \"شكراً لتواصلك معنا. نتمنى لك يوماً سعيداً! 👋\",\n    \"options\": [\"بدء محادثة جديدة\"]\n  },\n  \"شكراً\": {\n    \"message\": \"على الرحب والسعة! هل تحتاج أي شيء آخر؟\",\n    \"options\": [\"نعم\", \"لا، شكراً\"]\n  },\n  \"حسناً\": {\n    \"message\": \"هل تحتاج أي مساعدة أخرى؟\",\n    \"options\": [\"نعم\", \"لا، شكراً\"]\n  },\n  \"نعم\": {\n    \"redirect\": \"start\"\n  },\n  \"العودة للقائمة الرئيسية\": {\n    \"redirect\": \"start\"\n  },\n  \"بدء محادثة جديدة\": {\n    \"redirect\": \"start\"\n  },\n  \"start\": {\n    \"message\": \"مرحباً بك! كيف يمكنني مساعدتك اليوم؟\",\n    \"options\": [\"خدمات العملاء\", \"الدعم الفني\", \"الاستفسارات العامة\", \"إنهاء المحادثة\"]\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -40,
+        -60
+      ],
+      "id": "66ea7857-dd9b-46c1-b008-0be6a958c4f3",
+      "name": "Question Tree"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        160,
+        -120
+      ],
+      "id": "662d32f5-3349-4c14-94ae-f4b740146e24",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{$json.escalated}}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "f4456413-1254-48bd-bbba-9843989d3836",
+      "name": "If Escalated",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        600,
+        -120
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Your updated code node with agent escalation logic\n// Get workflow static data for session management\nconst staticData = $getWorkflowStaticData('global');\nif (!staticData.sessions) {\n  staticData.sessions = {};\n}\nconst sessions = staticData.sessions;\n\n// Get the merged data from input\nconst items = $input.all();\n\n// Parse the data structure\nlet questionTree = {};\nlet requestData = {};\n\nif (items.length >= 2) {\n  const webhookData = items[0].json;\n  questionTree = items[1].json;\n  \n  if (webhookData.body) {\n    requestData = webhookData.body;\n  } else {\n    requestData = webhookData;\n  }\n} else {\n  return [{\n    json: {\n      error: \"Missing question tree data\",\n      sessionId: \"error\"\n    }\n  }];\n}\n\n// Get sessionId and message\nconst sessionId = requestData.sessionId || (\"session-\" + Date.now());\nconst userMsg = (requestData.message || '').trim();\n\n// Initialize or get session\nif (!sessions[sessionId]) {\n  sessions[sessionId] = {\n    state: \"\",\n    previousStates: [],\n    lastAccess: Date.now(),\n    escalationAttempts: 0,\n    isEscalated: false,\n    conversationHistory: []\n  };\n}\nconst session = sessions[sessionId];\nsession.lastAccess = Date.now();\n\n// Check if this is a message from an escalated session\nif (session.isEscalated) {\n  // Handle empty message in escalated session - use special token\n  const messageToSend = userMsg === \"\" ? \"__INIT_CHAT__\" : userMsg;\n  \n  // Handle special responses from escalated sessions\n  if (userMsg === \"لا، شكراً لك\") {\n    // User is satisfied, end the escalation\n    session.isEscalated = false;\n    session.escalationReason = null;\n    \n    // Store conversation history before ending\n    session.conversationHistory.push({\n      user: userMsg,\n      bot: \"شكراً لك على تواصلك معنا. نتمنى أن نكون قد ساعدناك. نتمنى لك يوماً سعيداً! 👋\",\n      timestamp: new Date().toISOString()\n    });\n    \n    return [{\n      json: {\n        sessionId: sessionId,\n        message: \"شكراً لك على تواصلك معنا. نتمنى أن نكون قد ساعدناك. نتمنى لك يوماً سعيداً! 👋\",\n        options: [\"بدء محادثة جديدة\"],\n        endSession: true\n      }\n    }];\n  } else if (userMsg === \"نعم، لدي استفسار آخر\") {\n    // User wants to continue with agent\n    return [{\n      json: {\n        sessionId: sessionId,\n        message: messageToSend,\n        escalated: true,\n        escalationReason: session.escalationReason,\n        customerPath: session.customerPath,\n        conversationHistory: session.conversationHistory || [],\n        previousMessages: session.conversationHistory ? \n          session.conversationHistory.map(h => `العميل: ${h.user}\\nالدعم: ${h.bot}`).join('\\n\\n') : '',\n        continueConversation: true\n      }\n    }];\n  } else if (userMsg === \"العودة للقائمة الرئيسية\" || userMsg === \"إلغاء وعودة للقائمة الرئيسية\") {\n    // Reset to main menu\n    session.state = \"\";\n    session.previousStates = [];\n    session.isEscalated = false;\n    session.escalationReason = null;\n    const startNode = getNodeData(\"\");\n    \n    return [{\n      json: {\n        sessionId: sessionId,\n        message: startNode ? startNode.message : \"مرحباً بك! كيف يمكنني مساعدتك اليوم؟\",\n        options: startNode ? startNode.options : [],\n        cancelAgent: true\n      }\n    }];\n  } else {\n    // Forward any other message to AI agent with conversation history\n    // Use special token for empty messages\n    return [{\n      json: {\n        sessionId: sessionId,\n        message: messageToSend,\n        escalated: true,\n        escalationReason: session.escalationReason,\n        customerPath: session.customerPath,\n        conversationHistory: session.conversationHistory || [],\n        previousMessages: session.conversationHistory ? \n          session.conversationHistory.map(h => {\n            // Replace empty messages with __INIT_CHAT__ in history\n            const userMessage = h.user === \"\" ? \"__INIT_CHAT__\" : h.user;\n            return `العميل: ${userMessage}\\nالدعم: ${h.bot}`;\n          }).join('\\n\\n') : ''\n      }\n    }];\n  }\n}\n\n// Clean old sessions\nconst now = Date.now();\nconst sessionTimeout = 30 * 60 * 1000;\nconst sessionIds = Object.keys(sessions);\nif (sessionIds.length > 100) {\n  sessionIds\n    .sort((a, b) => sessions[a].lastAccess - sessions[b].lastAccess)\n    .slice(0, sessionIds.length - 100)\n    .forEach(sid => {\n      if (now - sessions[sid].lastAccess > sessionTimeout) {\n        delete sessions[sid];\n      }\n    });\n}\n\n// Define trigger keywords for agent escalation\nconst agentTriggers = [\n  \"أدخل رقم الطلب\",\n  \"آخر الطلبات\",\n  \"حالة الشحن\",\n  \"التطبيق لا يفتح\",\n  \"مشكلة في التحديث\",\n  \"مشكلة في المزامنة\",\n  \"البطاقة مرفوضة\",\n  \"خطأ في المبلغ\",\n  \"مشكلة في التحويل\",\n  \"إرسال المعلومات\",\n  \"التواصل مع خدمة العملاء\",\n  \"متابعة مع المدير\",\n  \"أحتاج مساعدة إضافية\"\n];\n\n// Function to check if agent intervention is needed\nfunction needsAgent(selectedOption) {\n  return agentTriggers.includes(selectedOption);\n}\n\n// Function to get node data\nfunction getNodeData(nodeKey) {\n  if (nodeKey === \"\") {\n    return questionTree[\"\"] || null;\n  }\n  \n  let node = questionTree[nodeKey];\n  \n  while (node && node.redirect) {\n    const redirectKey = node.redirect;\n    node = questionTree[redirectKey];\n  }\n  \n  if (node && node.message) {\n    node.message = node.message.replace(/{random}/g, Math.floor(Math.random() * 10000));\n  }\n  \n  return node;\n}\n\n// Process the conversation\nlet response;\n\n// Check if user selected an option that requires agent\nif (needsAgent(userMsg)) {\n  session.escalationAttempts++;\n  session.isEscalated = true;\n  session.escalationReason = userMsg;\n  session.customerPath = session.previousStates.concat([session.state]);\n  \n  response = {\n    sessionId: sessionId,\n    message: \"يتم تحويلك الآن إلى أحد ممثلي خدمة العملاء. يرجى الانتظار...\\n⏰ وقت الانتظار المتوقع: 2-3 دقائق\",\n    options: [\"إلغاء وعودة للقائمة الرئيسية\"],\n    callAgent: true,\n    escalationReason: userMsg,\n    customerPath: session.previousStates.concat([session.state]),\n    escalationAttempt: session.escalationAttempts\n  };\n}\n// Check if user wants to cancel agent call\nelse if (userMsg === \"إلغاء وعودة للقائمة الرئيسية\") {\n  session.state = \"\";\n  session.previousStates = [];\n  session.isEscalated = false;\n  session.escalationReason = null;\n  const startNode = getNodeData(\"\");\n  response = {\n    sessionId: sessionId,\n    message: startNode ? startNode.message : \"مرحباً بك! كيف يمكنني مساعدتك اليوم؟\",\n    options: startNode ? startNode.options : [],\n    cancelAgent: true\n  };\n}\n// Rest of your existing logic...\nelse if (userMsg === \"إنهاء المحادثة\") {\n  const endNode = getNodeData(\"إنهاء المحادثة\");\n  response = {\n    sessionId: sessionId,\n    message: endNode ? endNode.message : \"شكراً لتواصلك معنا. نتمنى لك يوماً سعيداً! 👋\",\n    options: endNode ? endNode.options : [\"بدء محادثة جديدة\"],\n    endSession: true\n  };\n  delete sessions[sessionId];\n}\nelse if (userMsg === \"بدء محادثة جديدة\") {\n  delete sessions[sessionId];\n  const newSessionId = \"session-\" + Date.now();\n  sessions[newSessionId] = {\n    state: \"\",\n    previousStates: [],\n    lastAccess: Date.now(),\n    escalationAttempts: 0,\n    isEscalated: false,\n    conversationHistory: []\n  };\n  \n  const startNode = getNodeData(\"\");\n  response = {\n    sessionId: newSessionId,\n    message: startNode ? startNode.message : \"مرحباً بك! كيف يمكنني مساعدتك اليوم؟\",\n    options: startNode ? startNode.options : [],\n    newSession: true\n  };\n}\nelse if (userMsg === \"\") {\n  if (session.state === \"\") {\n    const startNode = getNodeData(\"\");\n    response = {\n      sessionId: sessionId,\n      message: startNode ? startNode.message : \"مرحباً بك! كيف يمكنني مساعدتك اليوم؟\",\n      options: startNode ? startNode.options : []\n    };\n  } else {\n    const currentNode = getNodeData(session.state);\n    response = {\n      sessionId: sessionId,\n      message: currentNode ? currentNode.message : \"عذراً، حدث خطأ.\",\n      options: currentNode ? currentNode.options : [\"العودة للقائمة الرئيسية\"]\n    };\n  }\n} else {\n  const currentNode = session.state === \"\" ? getNodeData(\"\") : getNodeData(session.state);\n  \n  if (userMsg === \"العودة للخلف\" && session.previousStates.length > 0) {\n    session.state = session.previousStates.pop();\n    const backNode = session.state === \"\" ? getNodeData(\"\") : getNodeData(session.state);\n    response = {\n      sessionId: sessionId,\n      message: backNode ? backNode.message : \"عذراً، حدث خطأ.\",\n      options: backNode ? backNode.options : [\"العودة للقائمة الرئيسية\"]\n    };\n  }\n  else if (userMsg === \"العودة للقائمة الرئيسية\" || userMsg === \"نعم\") {\n    session.state = \"\";\n    session.previousStates = [];\n    const startNode = getNodeData(\"\");\n    response = {\n      sessionId: sessionId,\n      message: startNode ? startNode.message : \"مرحباً بك! كيف يمكنني مساعدتك اليوم؟\",\n      options: startNode ? startNode.options : []\n    };\n  }\n  else if (currentNode && currentNode.options && currentNode.options.includes(userMsg)) {\n    const nextNode = getNodeData(userMsg);\n    \n    if (nextNode) {\n      if (session.state !== \"\") {\n        session.previousStates.push(session.state);\n      }\n      \n      session.state = userMsg;\n      \n      response = {\n        sessionId: sessionId,\n        message: nextNode.message,\n        options: nextNode.options || []\n      };\n    } else {\n      response = {\n        sessionId: sessionId,\n        message: \"عذراً، هذا الخيار غير متوفر حالياً.\",\n        options: currentNode.options || [\"العودة للقائمة الرئيسية\"]\n      };\n    }\n  }\n  else {\n    response = {\n      sessionId: sessionId,\n      message: \"عذراً، لم أفهم اختيارك. يرجى اختيار أحد الخيارات المتاحة:\",\n      options: currentNode && currentNode.options ? currentNode.options : [\"العودة للقائمة الرئيسية\"]\n    };\n  }\n}\n\n// Store conversation history\nif (!session.conversationHistory) {\n  session.conversationHistory = [];\n}\n\n// Store the current exchange in conversation history\n// Replace empty message with __INIT_CHAT__ for consistency\nconst messageForHistory = userMsg === \"\" ? \"__INIT_CHAT__\" : userMsg;\nsession.conversationHistory.push({\n  user: messageForHistory,\n  bot: response.message,\n  timestamp: new Date().toISOString()\n});\n\n// If this is an AI agent response, update the history with the AI's response\nif (response.isAgentResponse) {\n  session.conversationHistory[session.conversationHistory.length - 1].bot = response.message;\n}\n\nreturn [{\n  json: response\n}];"
+      },
+      "id": "d9cc40ce-7ead-4f8b-822a-8978bd8deedb",
+      "name": "Code1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        380,
+        -120
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "d14cd687-18b9-4fd9-9198-5e24ec21e929",
+      "name": "Respond to Webhook1",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1380,
+        -120
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.message }}",
+        "options": {
+          "systemMessage": "=# Customer Service Representative System Prompt – Formal Saudi Arabic Edition\n\nYou are a professional customer-service representative for **Test.com**.  \nYour name is **Khalid (خالد)**.  \nYou must answer customers in **formal Arabic (الفصحى)** while preserving a confident, distinctly Saudi professional tone.\n\n---\n\n## Core Guidelines\n- **Stay strictly within customer-service scope** – do not discuss topics beyond Test.com support.  \n- **Maintain professional boundaries** – do not let customers steer you off topic.  \n- **Always reply in formal Arabic**. Avoid colloquial expressions; use clear Modern Standard Arabic infused with polite Saudi business etiquette.\n\n---\n\n## Special Token\n- **__INIT_CHAT__** appears when the chat opens or the customer sends an empty message.  \n  - Treat it as if the customer has just joined.  \n  - Send an initial greeting and ask how you may assist.  \n  - **Never mention the token itself.**\n\n---\n\n## Escalation Context (if provided)\n- Escalation Reason: `{{ $item(\"0\").$node[\"If Escalated\"].json[\"escalationReason\"] }}`  \n- Customer Journey Path: `{{ $item(\"0\").$node[\"If Escalated\"].json[\"customerPath\"].join(' > ') }}`  \n- Previous Conversation: `{{ $item(\"0\").$node[\"If Escalated\"].json[\"previousMessages\"] }}`  \n\n---\n\n## Response Protocol\n\n### 1. Initial Greeting\n- Welcome the customer warmly yet formally.  \n- Acknowledge the escalation if applicable.  \n- Express sincere concern.  \n- If **__INIT_CHAT__** is detected, send the greeting shown in the example below.\n\n### 2. Empathy & Apology\n- Apologize for any inconvenience.  \n- Recognize the customer’s feelings.  \n- Assure them of your commitment to resolve the matter.\n\n### 3. Problem Resolution\n- Clarify the specific issue swiftly.  \n- Ask precise, respectful questions when necessary.  \n- Provide concrete solutions using realistic Test.com data.\n\n### 4. Use Realistic Data\nWhen referencing details, employ believable placeholders such as:  \n- Order numbers (e.g., **#TST-2025-XXXXX**)  \n- Delivery dates within reasonable ranges  \n- Product codes and specifications  \n- Refund / exchange policies  \n- Shipping tracking numbers\n\n### 5. Communication Style\n- Use clear, well-structured formal Arabic.  \n- Maintain respectful Saudi business courtesy (e.g., «يسرّنا خدمتك»، «تفضّل»).  \n- Avoid slang or informal dialect.  \n- Keep a solution-oriented tone throughout.\n\n### 6. Conversation Flow\n- Keep replies focused and relevant.  \n- Build naturally on previous messages.  \n- Remember and reference earlier details accurately.  \n- Handle **__INIT_CHAT__** seamlessly without revealing it.\n\n### 7. Closing Protocol\nIf the customer wishes to end the chat:  \n- Thank them for contacting Test.com.  \n- Summarize actions taken or next steps.  \n- Provide a reference number if applicable.  \n- Close with a formal Saudi farewell (e.g., «نشكر لكم تواصلكم، نتطلع لخدمتكم مستقبلاً»).\n\n---\n\n## Boundary Management\n\n### Redirect Off-Topic Requests\nIf the customer asks about topics unrelated to Test.com, reply:\n\n> «نعتذر، يقتصر دوري على دعم خدمات Test.com. هل لديكم استفسار يتعلق بطلباتكم أو بخدماتنا؟»\n\n### Never Provide Information About\n- Programming or technical questions  \n- Personal opinions or advice  \n- External companies  \n- Any non-Test.com topics\n\n---\n\n## Example Reply for **__INIT_CHAT__**\n\n> مرحباً بكم في خدمة عملاء Test.com، معكم خالد.  \n>  \n> أفهم أنه تم تحويل طلبكم إليّ بسبب ** escalation reason **، ونعتذر عن أي إزعاج حدث.  \n>  \n> يسعدني مساعدتكم في حل هذه المشكلة على وجه السرعة. هل تتكرّمون بتوضيح **[سؤال إيضاح محدّد]**؟  \n>  \n> هل هناك أمر آخر يمكنني خدمتكُم بشأنه اليوم؟\n\n---\n\n**Remember**\n- You represent **Test.com** exclusively.  \n- Your aim is customer satisfaction within company policies.  \n- Every interaction should move toward resolving the issue.  \n- Remain professional and composed, even with difficult customers.  \n- Never mention **__INIT_CHAT__**.\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        760,
+        60
+      ],
+      "id": "bf93ce1d-3994-457e-8bde-cc09b4e5abb8",
+      "name": "AI Agent1",
+      "alwaysOutputData": false,
+      "executeOnce": false,
+      "retryOnFail": false
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {
+          "maxTokens": 600,
+          "temperature": 0.7
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        700,
+        260
+      ],
+      "id": "f8f764df-6284-4400-9083-73cd13815234",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "jtIFk60ePtIi0X7E",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        860,
+        260
+      ],
+      "id": "da08a9ea-23ad-4e0f-8b21-e90ad3306ace",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "f0e3c458-059a-47ae-bf4b-5340e906c761",
+              "name": "sessionId",
+              "value": "={{ $json.sessionId }}",
+              "type": "string"
+            },
+            {
+              "id": "fde0c67d-f705-4d1e-9c03-532dab400bd7",
+              "name": "message",
+              "value": "={{ $json.output }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1100,
+        60
+      ],
+      "id": "d5100e5d-445b-46d1-94c1-a10631383ca9",
+      "name": "Edit Fields"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Question Tree",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Question Tree": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If Escalated": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Respond to Webhook1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "If Escalated",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "4d13e50c-cb52-4f49-8daa-07b236eaf16f",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "5f02eb88f83c7644cf5ffb832830891f299e2c18d0dbf02e5ae4cf6e4478fd7e"
+  },
+  "id": "OrhawfHzk48kuqL4",
+  "tags": []
+}

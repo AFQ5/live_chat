@@ -1,0 +1,138 @@
+<!-- chat-widget.component.html -->
+<div class="container">
+    <h1>Custom Chat Widget Demo</h1>
+    <p>The chat widget is in the bottom right corner. Click to open!</p>
+  </div>
+  
+  <!-- Chat Widget Button -->
+  <button 
+    class="chat-widget-button" 
+    (click)="toggleChat()"
+    [attr.aria-label]="'Open chat'"
+    [attr.aria-expanded]="isOpen">
+    <img 
+      src="https://img.icons8.com/?size=100&id=pqnK6bD2kfpf&format=png&color=FFFFFF" 
+      alt="Chat" 
+      class="chat-icon">
+  </button>
+  
+  <!-- Chat Container -->
+  <div 
+    class="chat-container" 
+    [class.active]="isOpen"
+    [@slideUp]
+    *ngIf="isOpen">
+    
+    <!-- Header -->
+    <div class="chat-header">
+      <div class="chat-header-content">
+        <div class="chat-header-logo">
+          <img 
+            src="https://img.icons8.com/?size=100&id=veBt4rzuCDqX&format=png&color=4F008C" 
+            alt="Logo" 
+            class="logo-icon">
+        </div>
+        <div class="chat-header-text">
+          <h3>Test.com</h3>
+          <p>We typically respond right away</p>
+        </div>
+      </div>
+      <button 
+        class="chat-close-button" 
+        (click)="toggleChat()"
+        [attr.aria-label]="'Close chat'">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
+        </svg>
+      </button>
+    </div>
+  
+    <!-- Messages Container -->
+    <div class="chat-messages" #chatMessages>
+      <div 
+        *ngFor="let message of messages; trackBy: trackByMessageId" 
+        class="message"
+        [class.user]="message.type === 'user'"
+        [class.bot]="message.type === 'bot'"
+        [@fadeIn]>
+  
+        <!-- Bot Message with Avatar -->
+        <div *ngIf="message.type === 'bot'" class="message-content">
+          <div class="bot-avatar">
+            <img 
+              src="https://img.icons8.com/?size=100&id=Imv4VIewVo4o&format=png&color=FFFFFF" 
+              alt="Bot">
+          </div>
+          <div class="message-bubble bot-message">
+            <div class="message-text">{{ message.content }}</div>
+            
+            <!-- Option Buttons -->
+            <div 
+              *ngIf="message.options && message.options.length > 0" 
+              class="message-options">
+              <button 
+                *ngFor="let option of message.options" 
+                class="option-button" 
+                (click)="handleOptionClick(option)" 
+                [disabled]="isProcessing"
+                [attr.aria-label]="'Select option: ' + option">
+                {{ option }}
+              </button>
+            </div>
+          </div>
+        </div>
+  
+        <!-- User Message -->
+        <div *ngIf="message.type === 'user'" class="message-content">
+          <div class="message-bubble user-message">
+            <div class="message-text">{{ message.content }}</div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Typing Indicator -->
+      <div 
+        *ngIf="showTypingIndicator" 
+        class="message bot"
+        [@fadeIn]>
+        <div class="message-content">
+          <div class="bot-avatar">
+            <img 
+              src="https://img.icons8.com/?size=100&id=Imv4VIewVo4o&format=png&color=FFFFFF" 
+              alt="Bot">
+          </div>
+          <div class="message-bubble bot-message">
+            <div class="typing-indicator">
+              <span class="typing-dot"></span>
+              <span class="typing-dot"></span>
+              <span class="typing-dot"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Footer with Input Form -->
+    <div class="chat-footer">
+      <!-- Show input form when connected to an agent -->
+      <form *ngIf="isAgentConnected" class="chat-input-form" (ngSubmit)="handleUserSubmit()">
+        <input 
+          type="text" 
+          [(ngModel)]="userInput" 
+          name="userInput"
+          placeholder="Type your message..." 
+          class="chat-input"
+          autocomplete="off">
+        <button type="submit" class="send-button" [disabled]="!userInput.trim()">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+          </svg>
+        </button>
+      </form>
+
+      <!-- Show default text when not connected -->
+      <div *ngIf="!isAgentConnected" class="chat-bottom-info">
+        <p>اختر من الخيارات المتاحة</p>
+      </div>
+    </div>
+  </div>
