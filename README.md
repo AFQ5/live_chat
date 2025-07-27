@@ -1,6 +1,12 @@
 # LiveChat
 
+## n8n Workflow
+![Screenshot](public/n8n-workflow.png)
+
+## Screenshot
 ![Screenshot](public/Screenshot.png)
+
+## demo
 ![Live Demo GIF](public/view.gif)
 ---
 
